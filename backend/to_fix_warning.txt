@@ -1,0 +1,15 @@
+PS C:\Users\akshay\Desktop\api> python -u "c:\Users\akshay\Desktop\api\testing.py"
+C:\Users\akshay\AppData\Local\Programs\Python\Python311\Lib\site-packages\langchain\llms\__init__.py:548: LangChainDeprecationWarning: Importing LLMs from langchain is deprecated. Importing from langchain will no longer be supported as of langchain==0.2.0. Please import from langchain-community instead:
+
+`from langchain_community.llms import GooglePalm`.
+
+To install langchain-community run `pip install -U langchain-community`.
+  warnings.warn(
+C:\Users\akshay\AppData\Local\Programs\Python\Python311\Lib\site-packages\langchain\utilities\__init__.py:24: LangChainDeprecationWarning: Importing this utility from langchain is deprecated. Importing it from langchain will no longer be supported as of langchain==0.2.0. Please import from langchain-community instead:
+
+`from langchain_community.utilities import SQLDatabase`.
+
+To install langchain-community run `pip install -U langchain-community`.
+  warnings.warn(
+C:\Users\akshay\AppData\Local\Programs\Python\Python311\Lib\site-packages\langchain_core\_api\deprecation.py:117: LangChainDeprecationWarning: The function `__call__` was deprecated in LangChain 0.1.0 and will be removed in 0.2.0. Use invoke instead.
+  warn_deprecated(

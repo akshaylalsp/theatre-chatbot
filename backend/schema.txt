@@ -1,0 +1,28 @@
+CREATE TABLE Movies (
+    name TEXT PRIMARY KEY,
+    image TEXT NOT NULL,
+    inLanguage TEXT NOT NULL,
+    duration TEXT NOT NULL,
+    datePublished TEXT NOT NULL,
+    movie_detail_link TEXT NOT NULL,
+    summary TEXT NOT NULL,
+    genre TEXT NOT NULL,
+    casts TEXT NOT NULL,
+    rating REAL NOT NULL
+);
+
+
+CREATE TABLE Theaters (
+    name TEXT PRIMARY KEY,
+    address TEXT
+);
+
+
+CREATE TABLE Showtimes (
+    theater TEXT,
+    movie TEXT,
+    showtime TIME,
+    FOREIGN KEY (theater) REFERENCES Theaters(name),
+    FOREIGN KEY (movie) REFERENCES Movies(name)
+);
+
