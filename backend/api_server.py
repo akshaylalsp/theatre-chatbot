@@ -21,5 +21,30 @@ def execute_result():
     result = chatbot_instance.execute_result(nl_question)
     return jsonify(result=result)
 
+def get_db_connection():
+    conn = sqlite3.connect('modules/movie.db')  # Replace with your database name
+    conn.row_factory = sqlite3.Row  # Allows fetching rows as dictionary-like objects
+    return conn
+
+# Define a route that returns all entries from the Movies table
+@app.route('/movies', methods=['GET'])
+def get_movies():
+    # Connect to the database
+    conn = get_db_connection()
+
+    # Query to select all movies
+    query = 'SELECT * FROM Movies'
+    movies = conn.execute(query).fetchall()  # Fetch all rows
+
+    # Convert the data to a list of dictionaries
+    movies_list = [dict(movie) for movie in movies]
+
+    # Close the database connection
+    conn.close()
+
+    # Return the data as a JSON response
+    return jsonify(movies_list)
+
+
 if __name__ == '__main__':
     app.run(debug=True)
