@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 async function fetchMovies() {
     try {
-        const response = await fetch('https://api. .com/movies');
+        const response = await fetch('https://api.backend/api_server.py.com/movies');
         if (!response.ok) {
             throw new Error('Failed to fetch movies');
         }
